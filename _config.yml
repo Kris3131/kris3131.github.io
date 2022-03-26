@@ -3,11 +3,11 @@ author: Kris Chiang
 email: krischiang0301@gmail.com
 description: > # this means to ignore newlines until "twitter_username:"
   世界上太多知識，需要把不知道的記錄下來，也需要把知道的也記起來
-
+markdown: kramdown
 # social links
 #twitter_username: jekyllrb
 github_username: Kirs3131
-rss: rss
+# rss: rss
 # dribbble_username: jekyll
 # facebook_username: jekyll
 # flickr_username: jekyll
@@ -24,7 +24,7 @@ rss: rss
 # - username: jekyll2
 #   instance: example.com
 
-show_excerpts: false # set to true to show excerpts on the homepage
+show_excerpts: true # set to true to show excerpts on the homepage
 
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
@@ -46,5 +46,3 @@ plugins:
 header_pages:
   - about.md
   - portfolio.md
-
-show_excerpts: true
