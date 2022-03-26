@@ -1,18 +1,12 @@
 ---
 layout: page
-title: About
+title: KC’s note
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+學習路上，每個人都是初學者。一直保持初心，才能一直學習。
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+我是Kris，誤打誤撞的進入很多不同領域。走跳在不同領域間時常能產生出新的想法，擺過地攤、當過業務、做過媒體企劃、現在漫遊在程式語言中。在浩瀚無敵的宇宙中，試圖釐清重要的概念和清晰的邏輯。
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+20220326是我正式踏進這個新世界的第26天，從空白的頁面，經過數個小時的奮戰後的結果，不是很完整，但可以慢慢優化。所有的事都有可以進步、變更好的空間。
 
-
-[jekyll-organization]: https://github.com/jekyll
