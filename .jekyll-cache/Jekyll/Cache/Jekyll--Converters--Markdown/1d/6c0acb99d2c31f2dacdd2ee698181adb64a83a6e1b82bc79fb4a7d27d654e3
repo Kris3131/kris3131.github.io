@@ -1,0 +1,145 @@
+I"<p>Routes、Model、View、Controller 的概念困擾很久，簡單來說：</p>
+
+<p>MVC 是<strong>軟體設計的一種模式</strong>(software design pattern)，可以參考<a href="https://www.wikiwand.com/en/Model%E2%80%93view%E2%80%93controller">Wiki</a></p>
+
+<p>進入 MVC 世界之前，補了一些 Internet 與 Web 的運作邏輯，</p>
+
+<h2 id="internet-與-web">Internet 與 Web</h2>
+
+<h1 id="什麼是-internet">什麼是 internet?</h1>
+
+<ul>
+  <li><strong>Internet 是 Web 的基礎</strong>，換句話說， Web 是建構在 Internet 之上。</li>
+  <li>
+    <p><strong>Internet</strong> 是電腦與電腦之間的連結</p>
+
+    <p><img src="/assets/post_img/internet-schema-1.png" alt="Route" title="resource: MDN" /></p>
+
+    <p>圖片來源：MDN</p>
+  </li>
+  <li>
+    <p><em>Route</em> 是當電腦間的連結關係變多的一種連結管理</p>
+
+    <p><img src="/assets/post_img/internet-schema-3.png" alt="Route" title="resource: MDN" /></p>
+
+    <p>圖片來源：MDN</p>
+  </li>
+  <li>
+    <p><strong>network</strong> 是 Routes 規模變大，連結 Routes 間的連結管理</p>
+
+    <p><img src="/assets/post_img/internet-schema-5.png" alt="network" title="resource: MDN" /></p>
+
+    <p>圖片來源：MDN</p>
+  </li>
+  <li>
+    <p><strong>ISP(Internet Service Provider)</strong> 是 network 間的連結管理</p>
+
+    <p><img src="/assets/post_img/internet-schema-7.png" alt="Internet" title="resource: MDN" /></p>
+  </li>
+</ul>
+
+<p>圖片來源：MDN</p>
+
+<ul>
+  <li><strong>IP(Internet Protocol)</strong> 連結到 network 的識別，一連串數字組成 <code class="language-plaintext highlighter-rouge">142.250.190.78</code>，但我們連到網頁上不太可能會把一整串數字背出來，所以我們需要 <strong>domain name</strong>，<code class="language-plaintext highlighter-rouge">https://www.google.com.tw/</code></li>
+</ul>
+
+<h1 id="什麼是-web">什麼是 Web?</h1>
+
+<p>Web 是介於客戶(client)與主機(server)之間的關係， client 會向 server 發送請求，server 會回應 client 的需求，網路世界的供需關係。</p>
+
+<p><img src="/assets/post_img/simple-client-server.png" alt="Web" title="resource: pixabay" /></p>
+
+<p>MDN 關於 Web 的描述很深刻</p>
+
+<blockquote>
+  <blockquote>
+    <p>For now, let’s imagine that the web is a road. On one end of the road is the client, which is like your house. On the other end of the road is the server, which is a shop you want to buy something from.</p>
+  </blockquote>
+</blockquote>
+
+<p><img src="https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014617_1280.jpg" alt="Web" title="resource: pixabay" /></p>
+
+<p>依照網路世界運作模式來看，可以解釋為什麼在 Ruby on Rails 的建立會依照<strong>Routes &gt; Model &gt; View &gt; Controller</strong>這樣的順序進行</p>
+
+<h2 id="routes">Routes</h2>
+
+<p>路徑是建立 client 與 server 之間橋樑。<br />
+Rails 的第一步：設定 Routes。<br />
+那是不是可以把自己想像成使用者？<br />
+進入頁面後，<br />
+期待看到的內容是什麼？<br />
+畫面的操作流程是什麼？<br />
+會期待網頁有什麼功能？<br />
+是購物型網站？<br />
+資訊瀏覽網站？<br />
+購物網站？<br />
+登入功能應該有哪些？<br /></p>
+
+<p>透過這樣的疑問句來找出需要建立的 Model 需要哪些內容 &gt; View 畫面要怎麼呈現 &gt; Controller 介於 DataBase 與 View 之間的橋樑</p>
+
+<h2 id="model">Model</h2>
+
+<p>Model 是用 Ruby 類別 (class)的方式表示 data，在 Model 透過 Active Record 和 database 拿到需要的資料。
+建立 model 需要注意 model_name 的<strong>大小寫與單複數問題</strong>。
+這裡可以這樣記：<strong>因為model是一筆一筆的資料寫進資料庫</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">bin/rails generate model Article title:string body:text</code>
+意思是：用rails 建立一個 Article 的 model，在這 model 裡面需要的資料結構，title是string，body是text</p>
+
+<h1 id="activerecord">ActiveRecord</h1>
+<p>Active Record 是 MVC 裡面的 M，呈現資料與邏輯
+Object Relational Mapping(ORM) system 是連結資料庫的管理架構。</p>
+
+<p>再深入的解釋 Active Record：</p>
+
+<ul>
+  <li>呈現 data 跟 model</li>
+  <li>model 之間的關聯性、階層</li>
+  <li>驗證 Model 的資料格式</li>
+  <li>用物件導向的方式來呈現資料結構</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+<span class="k">end</span></code></pre></figure>
+
+<h1 id="database-migration">Database Migration</h1>
+
+<p>官方文件對於Database Migration的解釋是</p>
+
+<blockquote>
+  <blockquote>
+    <p>Migrations are used to alter the structure of an application’s database. In Rails applications, migrations are written in Ruby so that they can be database-agnostic.</p>
+  </blockquote>
+</blockquote>
+
+<p>我的理解是：用 Ruby 表示的 database 的資料結構，更好理解。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CreateResumes</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="p">[</span><span class="mf">6.1</span><span class="p">]</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">create_table</span> <span class="ss">:resumes</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:title</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">text</span> <span class="ss">:content</span>
+      <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:status</span>
+
+      <span class="n">t</span><span class="p">.</span><span class="nf">timestamps</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Migration 是把 database 內的資料格式列出來，所以要調整 column 的項目，可以另外
+<code class="language-plaintext highlighter-rouge">bin/rails generate migration AddPartNumberToProducts part_number:string</code>
+意思是：用rails 建立一個 migration 檔案，在這檔案裡面需要再加上一個 column 到 :products 的 model 中，</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">AddPartNumberToProducts</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="p">[</span><span class="mf">6.0</span><span class="p">]</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_column</span> <span class="ss">:products</span><span class="p">,</span> <span class="ss">:part_number</span><span class="p">,</span> <span class="ss">:string</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>ActiveRecord 是定義資料間的關聯性，驗證資料</p>
+
+<h2 id="view">View</h2>
+
+<h2 id="controller">Controller</h2>
+:ET

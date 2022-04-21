@@ -228,6 +228,9 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
+  display: flex;
+  flex-direction: column;
+
 
   h2 {
     @include relative-font-size(2);
