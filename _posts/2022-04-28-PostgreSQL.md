@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PostgreSQL
+title: Rails default database SQLite3 switch to PostgreSQL
 category: install steps
 tags: Ruby on Rails
 ---
