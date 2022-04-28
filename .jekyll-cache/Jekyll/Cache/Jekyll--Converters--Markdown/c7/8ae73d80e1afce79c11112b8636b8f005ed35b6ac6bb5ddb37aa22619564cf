@@ -1,0 +1,11 @@
+I"�<h3 id="switch-sqlite3-to-postgresql">Switch SQLite3 to PostgreSQL</h3>
+
+<h2 id="database">Database</h2>
+
+<p>database是資料庫，為什麼需要資料庫？因為 client - server  互動需要資料傳輸， client 傳送資料給 server ， server 向 client 顯示資料，或是儲存 client 傳送的資料。所以需要 database 儲存資料。</p>
+
+<p>假如所有資料通通放在一起，沒有一個系統性的整理，會變得很可怕。所以我們可以利用表格的方式整理散亂的資料，table 是資料表格，fields column 是”欄” ，record row 是資料”列”，視覺呈現會是這樣</p>
+
+<p><img src="/assets/post_img/sql-table-column-row.png" alt="table" title="table-column-row" /></p>
+
+:ET
