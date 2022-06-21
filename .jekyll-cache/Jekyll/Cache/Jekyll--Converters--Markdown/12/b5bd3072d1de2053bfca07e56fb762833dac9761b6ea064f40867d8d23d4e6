@@ -1,6 +1,7 @@
-I"8<h1 id="html-的-head-有什麼">HTML 的 head 有什麼</h1>
+I"�<h1 id="html-的-head-有什麼">HTML 的 head 有什麼</h1>
 <p>HTML 是網頁的架構，由語意標籤組成，這裡不會特別紀錄標籤，會把<strong>重點放在 head</strong>裡面有些什麼。
-在紀錄 head 之前，會先說明 &lt;!DOCTYPE html&gt;、&lt;html&gt; 、&lt;head&gt;、&lt;body&gt; 是什麼</p>
+在紀錄 head 之前，會先說明 &lt;!DOCTYPE html&gt;、&lt;html&gt; 、&lt;head&gt;、&lt;body&gt; 是什麼
+<br /></p>
 <h2 id="html-有些什麼">HTML 有些什麼？</h2>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -15,24 +16,5 @@
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span></code></pre></figure>
 
-<h3 id="doctype-html">&lt;!DOCTYPE html&gt;</h3>
-<p>文件的種類，告訴瀏覽器文件的種類是 HTML<br />
-為什麼需要告訴瀏覽器文件的種類？ 與瀏覽器渲染畫面的模式有關。<br />
-瀏覽器有三種渲染畫面的模式：</p>
-<ul>
-  <li><strong>quirks mode</strong>、</li>
-  <li><strong>almost standards mode</strong>、</li>
-  <li><strong>standards mode</strong><br />
-確保瀏覽器在渲染畫面的時候是在對的模式下進行</li>
-</ul>
-
-<h3 id="html">&lt;html&gt;</h3>
-<ul>
-  <li>
-    <html>標籤包含整個頁面的內容
-</html>
-  </li>
-  <li>又可以被稱為root element</li>
-</ul>
-
+<p><br /></p>
 :ET

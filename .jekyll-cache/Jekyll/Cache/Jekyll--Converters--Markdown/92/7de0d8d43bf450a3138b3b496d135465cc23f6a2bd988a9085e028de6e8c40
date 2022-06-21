@@ -1,6 +1,7 @@
-I"�<h3 id="html-的-head-有什麼">HTML 的 head 有什麼</h3>
+I"�<h1 id="html-的-head-有什麼">HTML 的 head 有什麼</h1>
 <p>HTML 是網頁的架構，由語意標籤組成，這裡不會特別紀錄標籤，會把<strong>重點放在 head</strong>裡面有些什麼。
-在紀錄 head 之前，會先說明 &lt;!DOCTYPE html&gt;、&lt;html&gt; 、&lt;head&gt;、&lt;body&gt; 是什麼</p>
+在紀錄 head 之前，會先說明 &lt;!DOCTYPE html&gt;、&lt;html&gt; 、&lt;head&gt;、&lt;body&gt; 是什麼
+<br /></p>
 <h2 id="html-有些什麼">HTML 有些什麼？</h2>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
