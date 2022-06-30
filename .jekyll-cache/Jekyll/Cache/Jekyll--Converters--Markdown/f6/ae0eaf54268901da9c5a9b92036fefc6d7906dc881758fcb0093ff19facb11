@@ -1,0 +1,48 @@
+I"�<p>完成 Demo : <a href="https://kris3131.github.io/JavaScript30/01%20-%20JavaScript%20Drum%20Kit/index.html">Drum-Kit</a> <br /></p>
+
+<p>重點觀念：</p>
+<ul>
+  <li>querySelector 抓取 HTML 元素</li>
+  <li>addEventListener 在 HTML 元素中加入事件監聽</li>
+  <li>操作 classList 新增 / 移除 CSS 效果</li>
+</ul>
+
+<p>細節：</p>
+<ul>
+  <li>querySelector »&gt; 選取器概念</li>
+  <li>HTML »&gt; audio »&gt; play()</li>
+  <li>HTML »&gt; audio »&gt; set currentTime</li>
+  <li>addEventListener »&gt; transitionend
+<br /></li>
+</ul>
+
+<p>程式碼:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">function</span> <span class="nx">playSound</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 按下 keyboard &gt;&gt;&gt; 要知道是多少 &gt;&gt;&gt; 播放聲音 / 變化動畫</span>
+    <span class="c1">// 抓 audio / div&gt;.key</span>
+    <span class="kd">const</span> <span class="nx">audio</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">`audio[data-key="</span><span class="p">${</span><span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span><span class="p">}</span><span class="s2">"]`</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">`.key[data-key="</span><span class="p">${</span><span class="nx">e</span><span class="p">.</span><span class="nx">keyCode</span><span class="p">}</span><span class="s2">"]`</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">audio</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="c1">// 當按下 audio 對應 keyCode &gt;&gt;&gt; 播放音樂</span>
+    <span class="c1">// 每次播放將 currentTime 設定為 0</span>
+    <span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nx">audio</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
+    <span class="c1">// key classList 加上 playing CSS 效果</span>
+    <span class="nx">key</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">playing</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="kd">function</span> <span class="nx">removeTransition</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">propertyName</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">transform</span><span class="dl">"</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="dl">"</span><span class="s2">playing</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// 監聽器 &gt;&gt;&gt; keyboard</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">keydown</span><span class="dl">"</span><span class="p">,</span> <span class="nx">playSound</span><span class="p">);</span>
+  <span class="c1">// 當 playing CSS 效果結束時 &gt;&gt;&gt; 把動畫拉掉</span>
+  <span class="c1">// 把所有 key 抓出來 &gt;&gt;&gt; 監聽 CSS 動畫效果</span>
+  <span class="kd">const</span> <span class="nx">keys</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.key</span><span class="dl">"</span><span class="p">);</span>
+  <span class="c1">// 在每一個 key 上設定監聽器</span>
+  <span class="nx">keys</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">key</span><span class="p">)</span> <span class="o">=&gt;</span>
+    <span class="nx">key</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">transitionend</span><span class="dl">"</span><span class="p">,</span> <span class="nx">removeTransition</span><span class="p">)</span>
+  <span class="p">);</span></code></pre></figure>
+
+:ET
