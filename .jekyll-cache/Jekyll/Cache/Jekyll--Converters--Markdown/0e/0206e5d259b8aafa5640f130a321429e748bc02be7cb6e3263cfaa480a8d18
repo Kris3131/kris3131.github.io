@@ -1,9 +1,0 @@
-I"G<p>完成 Demo : <a href="https://kris3131.github.io/JavaScript30/01%20-%20JavaScript%20Drum%20Kit/index.html">Drum-Kit</a> <br />
-重點觀念：</p>
-<ul>
-  <li>querySelector 抓取 HTML 元素</li>
-  <li>addEventListener 在 HTML 元素中加入事件監聽</li>
-  <li>操作 classList 新增 / 移除 CSS 效果</li>
-</ul>
-
-:ET
