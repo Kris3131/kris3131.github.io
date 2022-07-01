@@ -1,8 +1,8 @@
-I"_<h2 id="功能說明">功能說明</h2>
+I"e<h2 id="功能說明">功能說明</h2>
 <p>時鐘 »&gt; 當下時間</p>
 
 <h2 id="demo">Demo</h2>
-<p><a href="https://kris3131.github.io/JavaScript30/02%20-%20JS%20and%20CSS%20Clock/index.html">Demo</a></p>
+<p><a href="https://kris3131.github.io/JavaScript30/02%20-%20JS%20and%20CSS%20Clock/index.html">時鐘Demo</a></p>
 
 <h2 id="pseudocode">pseudocode</h2>
 
@@ -54,7 +54,7 @@
     <span class="c1">// degrees</span>
     <span class="kd">const</span> <span class="nx">secondDegrees</span> <span class="o">=</span> <span class="nx">seconds</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">90</span><span class="p">;</span>
     <span class="kd">const</span> <span class="nx">minDegrees</span> <span class="o">=</span> <span class="p">((</span><span class="nx">mins</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="nx">seconds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">90</span><span class="p">;</span>
-    <span class="kd">const</span> <span class="nx">hourDegrees</span> <span class="o">=</span> <span class="p">(((</span><span class="nx">hours</span> <span class="o">/</span> <span class="mi">12</span><span class="p">)</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="nx">mins</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span> <span class="o">*</span> <span class="mi">30</span> <span class="o">+</span> <span class="mi">90</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">hourDegrees</span> <span class="o">=</span> <span class="p">(((</span><span class="nx">hours</span> <span class="o">-</span> <span class="mi">12</span><span class="p">)</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="nx">mins</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span> <span class="o">*</span> <span class="mi">30</span> <span class="o">+</span> <span class="mi">90</span><span class="p">;</span>
 
     <span class="c1">// transform</span>
     <span class="nx">secondHand</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s2">`rotate(</span><span class="p">${</span><span class="nx">secondDegrees</span><span class="p">}</span><span class="s2">deg)`</span><span class="p">;</span>
