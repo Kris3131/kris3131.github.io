@@ -51,7 +51,7 @@ tags: JavaScript
     // degrees
     const secondDegrees = seconds * 6 + 90;
     const minDegrees = ((mins * 60 + seconds) / 60) * 6 + 90;
-    const hourDegrees = (((hours / 12) * 60 + mins) / 60) * 30 + 90;
+    const hourDegrees = (((hours - 12) * 60 + mins) / 60) * 30 + 90;
 
     // transform
     secondHand.style.transform = `rotate(${secondDegrees}deg)`;
