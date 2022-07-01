@@ -1,0 +1,67 @@
+I"_<h2 id="功能說明">功能說明</h2>
+<p>時鐘 »&gt; 當下時間</p>
+
+<h2 id="demo">Demo</h2>
+<p><a href="https://kris3131.github.io/JavaScript30/02%20-%20JS%20and%20CSS%20Clock/index.html">Demo</a></p>
+
+<h2 id="pseudocode">pseudocode</h2>
+
+<ul>
+  <li>現在時間
+    <ul>
+      <li>秒</li>
+      <li>分</li>
+      <li>時</li>
+    </ul>
+  </li>
+  <li>預設指針角度為 90 度</li>
+  <li>一圈 360 度</li>
+  <li>秒 / 分 / 時角度
+    <ul>
+      <li>1 秒 »&gt; 6 度</li>
+      <li>1 分鐘 »&gt; 60 秒 »&gt; 1 分 »&gt; 6 度</li>
+      <li>1 小時 »&gt; 60 分 »&gt; 1 時 »&gt; 30 度</li>
+    </ul>
+  </li>
+  <li>每經過一秒改變 CSS transform 角度</li>
+</ul>
+
+<h2 id="重點觀念">重點觀念</h2>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/setInterval">setInterval</a> »&gt; 重複呼叫 function</li>
+</ul>
+
+<h2 id="細節">細節</h2>
+
+<ul>
+  <li>new Date()</li>
+  <li>getSeconds / getMinutes / getHours</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="c1">//  抓出指針 HTML elements</span>
+  <span class="kd">const</span> <span class="nx">secondHand</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.second-hand</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">minHand</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.min-hand</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">hourHand</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.hour-hand</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="kd">function</span> <span class="nx">setClockTime</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// time</span>
+    <span class="kd">const</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">seconds</span> <span class="o">=</span> <span class="nx">now</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">mins</span> <span class="o">=</span> <span class="nx">now</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">hours</span> <span class="o">=</span> <span class="nx">now</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span>
+
+    <span class="c1">// degrees</span>
+    <span class="kd">const</span> <span class="nx">secondDegrees</span> <span class="o">=</span> <span class="nx">seconds</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">90</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">minDegrees</span> <span class="o">=</span> <span class="p">((</span><span class="nx">mins</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="nx">seconds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">90</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">hourDegrees</span> <span class="o">=</span> <span class="p">(((</span><span class="nx">hours</span> <span class="o">/</span> <span class="mi">12</span><span class="p">)</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="nx">mins</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span> <span class="o">*</span> <span class="mi">30</span> <span class="o">+</span> <span class="mi">90</span><span class="p">;</span>
+
+    <span class="c1">// transform</span>
+    <span class="nx">secondHand</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s2">`rotate(</span><span class="p">${</span><span class="nx">secondDegrees</span><span class="p">}</span><span class="s2">deg)`</span><span class="p">;</span>
+    <span class="nx">minHand</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s2">`rotate(</span><span class="p">${</span><span class="nx">minDegrees</span><span class="p">}</span><span class="s2">deg)`</span><span class="p">;</span>
+    <span class="nx">hourHand</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span> <span class="s2">`rotate(</span><span class="p">${</span><span class="nx">hourDegrees</span><span class="p">}</span><span class="s2">deg)`</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">setInterval</span><span class="p">(</span><span class="nx">setClockTime</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+  <span class="nx">setClockTime</span><span class="p">();</span></code></pre></figure>
+
+:ET
