@@ -5,7 +5,8 @@ category: practice-note
 tags: JavaScript
 ---
 ## Array練習
-
+[Demo][demo]
+[demo]: https://kris3131.github.io/JavaScript30/04%20-%20Array%20Cardio%20Day%201/index.html
 
 {% highlight JavaScript %}
   const inventors = [
