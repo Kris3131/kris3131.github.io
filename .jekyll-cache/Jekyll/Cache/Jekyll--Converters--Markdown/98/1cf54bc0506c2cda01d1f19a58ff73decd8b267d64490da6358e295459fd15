@@ -1,0 +1,9 @@
+I"<h2 id="array練習">Array練習</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">Filter</a></p>
+<ul>
+  <li>比對陣列所有元素</li>
+  <li>回傳新陣列</li>
+  <li>後面接function</li>
+</ul>
+
+:ET

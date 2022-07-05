@@ -1,0 +1,165 @@
+I"l<h2 id="array練習">Array練習</h2>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">const</span> <span class="nx">inventors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">first</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Albert</span><span class="dl">"</span><span class="p">,</span> <span class="na">last</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Einstein</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1879</span><span class="p">,</span> <span class="na">passed</span><span class="p">:</span> <span class="mi">1955</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">first</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Isaac</span><span class="dl">"</span><span class="p">,</span> <span class="na">last</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Newton</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1643</span><span class="p">,</span> <span class="na">passed</span><span class="p">:</span> <span class="mi">1727</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">first</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Galileo</span><span class="dl">"</span><span class="p">,</span> <span class="na">last</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Galilei</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1564</span><span class="p">,</span> <span class="na">passed</span><span class="p">:</span> <span class="mi">1642</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">first</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Marie</span><span class="dl">"</span><span class="p">,</span> <span class="na">last</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Curie</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1867</span><span class="p">,</span> <span class="na">passed</span><span class="p">:</span> <span class="mi">1934</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">first</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Johannes</span><span class="dl">"</span><span class="p">,</span> <span class="na">last</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Kepler</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1571</span><span class="p">,</span> <span class="na">passed</span><span class="p">:</span> <span class="mi">1630</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">first</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Nicolaus</span><span class="dl">"</span><span class="p">,</span> <span class="na">last</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Copernicus</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1473</span><span class="p">,</span> <span class="na">passed</span><span class="p">:</span> <span class="mi">1543</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">first</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Max</span><span class="dl">"</span><span class="p">,</span> <span class="na">last</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Planck</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1858</span><span class="p">,</span> <span class="na">passed</span><span class="p">:</span> <span class="mi">1947</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">first</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Katherine</span><span class="dl">"</span><span class="p">,</span> <span class="na">last</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Blodgett</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1898</span><span class="p">,</span> <span class="na">passed</span><span class="p">:</span> <span class="mi">1979</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">first</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ada</span><span class="dl">"</span><span class="p">,</span> <span class="na">last</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lovelace</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1815</span><span class="p">,</span> <span class="na">passed</span><span class="p">:</span> <span class="mi">1852</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">first</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Sarah E.</span><span class="dl">"</span><span class="p">,</span> <span class="na">last</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Goode</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1855</span><span class="p">,</span> <span class="na">passed</span><span class="p">:</span> <span class="mi">1905</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">first</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lise</span><span class="dl">"</span><span class="p">,</span> <span class="na">last</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Meitner</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1878</span><span class="p">,</span> <span class="na">passed</span><span class="p">:</span> <span class="mi">1968</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">first</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hanna</span><span class="dl">"</span><span class="p">,</span> <span class="na">last</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hammarström</span><span class="dl">"</span><span class="p">,</span> <span class="na">year</span><span class="p">:</span> <span class="mi">1829</span><span class="p">,</span> <span class="na">passed</span><span class="p">:</span> <span class="mi">1909</span> <span class="p">},</span>
+  <span class="p">];</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">people</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="dl">'</span><span class="s1">Bernhard, Sandra</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Bethea, Erin</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Becker, Carl</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Bentsen, Lloyd</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Beckett, Samuel</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Blake, William</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Berger, Ric</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Beddoes, Mick</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Beethoven, Ludwig</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">Belloc, Hilaire</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Begin, Menachem</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Bellow, Saul</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Benchley, Robert</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Blair, Robert</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Benenson, Peter</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Benjamin, Walter</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Berlin, Irving</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">Benn, Tony</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Benson, Leana</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Bent, Silas</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Berle, Milton</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Berry, Halle</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Biko, Steve</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Beck, Glenn</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Bergman, Ingmar</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Black, Elk</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Berio, Luciano</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">Berne, Eric</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Berra, Yogi</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Berry, Wendell</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Bevan, Aneurin</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Ben-Gurion, David</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Bevel, Ken</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Biden, Joseph</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Bennington, Chester</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Bierce, Ambrose</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">Billings, Josh</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Birrell, Augustine</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Blair, Tony</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Beecher, Henry</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Biondo, Frank</span><span class="dl">'</span>
+<span class="p">];</span></code></pre></figure>
+
+<h2 id="題目">題目</h2>
+
+<p>1 <strong><em>Filter the list of inventors for those who were born in the 1500’s</em></strong></p>
+
+<p>MDN 參考資料 [Filter][filter]</p>
+<ul>
+  <li>比對陣列所有元素 » 符合條件的</li>
+  <li>回傳新陣列</li>
+  <li>後面接function
+[filter]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter</li>
+</ul>
+
+<p>方法一:標準 function 寫法</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">fifteen</span> <span class="o">=</span> <span class="nx">inventors</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">inventor</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">inventor</span><span class="p">.</span><span class="nx">year</span> <span class="o">&gt;=</span> <span class="mi">1500</span> <span class="o">&amp;&amp;</span> <span class="nx">inventor</span><span class="p">.</span><span class="nx">year</span> <span class="o">&lt;</span> <span class="mi">1600</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>方法二:簡化 function</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">fifteen</span> <span class="o">=</span> <span class="nx">inventors</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">inventor</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">inventor</span><span class="p">.</span><span class="nx">year</span> <span class="o">&gt;=</span> <span class="mi">1500</span> <span class="o">&amp;&amp;</span> <span class="nx">inventor</span><span class="p">.</span><span class="nx">year</span> <span class="o">&lt;</span> <span class="mi">1600</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>方法三:只有 return 一個值 » 簡化</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">fifteen</span> <span class="o">=</span> <span class="nx">inventors</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span>
+  <span class="p">(</span><span class="nx">inventor</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">inventor</span><span class="p">.</span><span class="nx">year</span> <span class="o">&gt;=</span> <span class="mi">1500</span> <span class="o">&amp;&amp;</span> <span class="nx">inventor</span><span class="p">.</span><span class="nx">year</span> <span class="o">&lt;</span> <span class="mi">1600</span>
+<span class="p">);</span></code></pre></figure>
+
+<p>2 <strong><em>Give us an array of the inventors first and last names</em></strong></p>
+
+<p>MDN 參考資料 [Map][map]</p>
+<ul>
+  <li>比對陣列所有元素 » 操作元素</li>
+  <li>回傳新陣列</li>
+  <li>後面接function
+[map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map#try_it</li>
+</ul>
+
+<p>方法一: string “+”</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">fullName</span> <span class="o">=</span> <span class="nx">inventors</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span>
+  <span class="p">(</span><span class="nx">inventor</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">inventor</span><span class="p">.</span><span class="nx">first</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">inventor</span><span class="p">.</span><span class="nx">last</span>
+<span class="p">);</span></code></pre></figure>
+
+<p>方法二: ``</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">const</span> <span class="nx">fullName</span> <span class="o">=</span> <span class="nx">inventors</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">inventor</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`</span><span class="p">${</span><span class="nx">inventor</span><span class="p">.</span><span class="nx">first</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="nx">inventor</span><span class="p">.</span><span class="nx">last</span><span class="p">}</span><span class="s2">`</span>
+  <span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fullName</span><span class="p">);</span></code></pre></figure>
+
+<p>3 <strong>Sort the inventors by birthday, oldest to youngest</strong></p>
+
+<p>MDN 參考資料 [Sort][sort]</p>
+<ul>
+  <li>排序</li>
+  <li>比對陣列所有元素
+[sort]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort</li>
+</ul>
+
+<p>方法一: if-else</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">ordered</span> <span class="o">=</span> <span class="nx">inventors</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">firstPerson</span><span class="p">,</span> <span class="nx">secondPerson</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">firstPerson</span><span class="p">.</span><span class="nx">year</span> <span class="o">&gt;</span> <span class="nx">secondPerson</span><span class="p">.</span><span class="nx">year</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>方法二:ternary operator</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">const</span> <span class="nx">oldest</span> <span class="o">=</span> <span class="nx">inventors</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">year</span> <span class="o">&gt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">year</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">table</span><span class="p">(</span><span class="nx">oldest</span><span class="p">);</span></code></pre></figure>
+
+<p>4 <strong>How many years did all the inventors live all together?</strong>
+MDN 參考資料 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">Reduce</a></p>
+<ul>
+  <li>比對陣列所有元素</li>
+  <li>previous / current value 相加</li>
+  <li>初始值</li>
+</ul>
+
+<p>方法一: for loop</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">totalYear</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">inventors</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">totalYear</span> <span class="o">+=</span> <span class="nx">inventors</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">passed</span> <span class="o">-</span> <span class="nx">inventors</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">year</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>方法二: reduce</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">totalYear</span> <span class="o">=</span> <span class="nx">inventors</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">previousValue</span><span class="p">,</span> <span class="nx">currentValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="nx">previousValue</span> <span class="o">+=</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">passed</span> <span class="o">-</span> <span class="nx">currentValue</span><span class="p">.</span><span class="nx">year</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">totalYear</span><span class="p">);</span></code></pre></figure>
+
+<p>5 <strong>Sort the inventors by years lived</strong></p>
+
+<p>方法一: if-else</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">oldest</span> <span class="o">=</span> <span class="nx">inventors</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">currentGuy</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">passed</span> <span class="o">-</span> <span class="nx">a</span><span class="p">.</span><span class="nx">year</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">nextGuy</span> <span class="o">=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">passed</span> <span class="o">-</span> <span class="nx">b</span><span class="p">.</span><span class="nx">year</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">currentGuy</span> <span class="o">&gt;</span> <span class="nx">nextGuy</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">oldest</span> <span class="o">=</span> <span class="nx">inventors</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">currentGuy</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">passed</span> <span class="o">-</span> <span class="nx">a</span><span class="p">.</span><span class="nx">year</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">nextGuy</span> <span class="o">=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">passed</span> <span class="o">-</span> <span class="nx">b</span><span class="p">.</span><span class="nx">year</span><span class="p">;</span>
+  <span class="nx">currentGuy</span> <span class="o">&gt;</span> <span class="nx">nextGuy</span> <span class="p">?</span> <span class="o">-</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">table</span><span class="p">(</span><span class="nx">oldest</span><span class="p">);</span></code></pre></figure>
+
+<p>6 <strong>create a list of <a href="https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris">Boulevards in Paris</a> that contain ‘de’ anywhere in the name</strong></p>
+
+<p><strong>change NodeList to Array</strong></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">const</span> <span class="nx">category</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.mw-category</span><span class="dl">"</span><span class="p">);</span>
+  <span class="c1">// Array.from</span>
+  <span class="c1">// [...category.querySelectorAll("a")]</span>
+  <span class="kd">const</span> <span class="nx">links</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">category</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">));</span>
+  <span class="kd">const</span> <span class="nx">de</span> <span class="o">=</span> <span class="nx">links</span>
+    <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">link</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">link</span><span class="p">.</span><span class="nx">textContent</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">streetName</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">streetName</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="dl">"</span><span class="s2">de</span><span class="dl">"</span><span class="p">));</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">de</span><span class="p">);</span></code></pre></figure>
+
+<p>7 <strong>Sort the people alphabetically by last name</strong></p>
+
+:ET
